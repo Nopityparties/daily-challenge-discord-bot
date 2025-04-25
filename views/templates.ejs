@@ -1,25 +1,35 @@
 
 <!DOCTYPE html>
 <html>
-<head><title>Edit Templates</title></head>
+<head>
+  <link rel="stylesheet" href="/styles.css">
+  <title>Edit Templates</title>
+</head>
 <body>
-  <h2>Edit Challenges for <%= niche %></h2>
-  <form action="/templates/add" method="POST">
-    <input type="hidden" name="niche" value="<%= niche %>"/>
-    <input type="text" name="newChallenge" placeholder="New challenge"/>
-    <button type="submit">Add</button>
-  </form>
-  <ul>
+<nav>
+  <h2>🧠 Templates</h2>
+  <a href="/">Home</a>
+  <a href="/templates?niche=trap">Templates</a>
+  <a href="/submissions">Submissions</a>
+</nav>
+<main>
+  <div class="card">
+    <h3>Challenges for "<%= niche %>"</h3>
     <% templates.forEach((template, i) => { %>
-      <li>
-        <%= template %>
+      <div class="chip"><%= template %>
         <form action="/templates/delete" method="POST" style="display:inline;">
           <input type="hidden" name="niche" value="<%= niche %>"/>
           <input type="hidden" name="index" value="<%= i %>"/>
-          <button type="submit">Delete</button>
+          <button type="submit" class="btn" style="margin-left:10px;">Delete</button>
         </form>
-      </li>
+      </div>
     <% }) %>
-  </ul>
+    <form action="/templates/add" method="POST">
+      <input type="hidden" name="niche" value="<%= niche %>"/>
+      <input type="text" name="newChallenge" placeholder="Add new challenge"/>
+      <button type="submit" class="btn">Add</button>
+    </form>
+  </div>
+</main>
 </body>
 </html>

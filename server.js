@@ -6,10 +6,10 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
 
 app.use(session({
   secret: 'partysecret',
@@ -24,8 +24,7 @@ const requireLogin = (req, res, next) => {
 
 app.get('/login', (req, res) => res.render('login'));
 app.post('/login', (req, res) => {
-  const { username, password } = req.body;
-  if (username === 'admin' && password === 'securepassword123') {
+  if (req.body.username === 'admin' && req.body.password === 'securepassword123') {
     req.session.loggedIn = true;
     res.redirect('/');
   } else {
@@ -33,9 +32,7 @@ app.post('/login', (req, res) => {
   }
 });
 
-app.get('/', requireLogin, (req, res) => {
-  res.render('index', { tier: 'Free' });
-});
+app.get('/', requireLogin, (req, res) => res.render('index'));
 
 app.get('/templates', requireLogin, (req, res) => {
   const niche = req.query.niche || 'trap';
@@ -65,4 +62,4 @@ app.get('/submissions', requireLogin, (req, res) => {
   res.render('submissions', { users });
 });
 
-app.listen(port, () => console.log(`✅ Dashboard running on port ${port}`));
+app.listen(port, () => console.log(`✅ Material-style dashboard running on port ${port}`));
