@@ -1,1 +1,1 @@
-// Full upgraded bot logic with streaks, badges, automation
+// bot with marketing commands like .version and .buybot

@@ -1,1 +1,1 @@
-// Dashboard server with login + backup + tier visibility
+// dashboard with tier logic and footer upsell
