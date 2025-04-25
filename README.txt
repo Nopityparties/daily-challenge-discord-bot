@@ -53,17 +53,7 @@ You may not:
 ✘ Expect warranty or support without a paid plan
 
 ---------------------------
-SUGGESTED PRICING:
----------------------------
-• One-time purchase for solo use: $29
-• Team license: $59 (up to 5 admins)
-• Hosted SaaS version: $5–10/month
-• Free community tier with locked features
-
-These prices are modeled after similar bots on sites like Gumroad, Whop, and BotGhost marketplace.
-
----------------------------
 CREDITS:
 ---------------------------
-Created by @Nopityparties with help from ChatGPT
+Created by @Nopityparties on Instagram
 Contact for licensing/custom versions: nopityparties@gmail.com
