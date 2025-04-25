@@ -21,6 +21,7 @@ client.once('ready', () => {
 
 client.on('messageCreate', async message => {
   if (message.author.bot || !message.content.startsWith(PREFIX)) return;
+
   const [command] = message.content.slice(PREFIX.length).trim().split(/\s+/);
   const userId = message.author.id;
   const username = message.author.username;
@@ -34,8 +35,16 @@ client.on('messageCreate', async message => {
     if (fs.existsSync(dataPath)) {
       users = JSON.parse(fs.readFileSync(dataPath));
     }
+
     if (!users[userId]) {
-      users[userId] = { username, points: 0, currentStreak: 0, lastSubmissionAM: null, lastSubmissionPM: null, lastStreakDay: null };
+      users[userId] = {
+        username,
+        points: 0,
+        currentStreak: 0,
+        lastSubmissionAM: null,
+        lastSubmissionPM: null,
+        lastStreakDay: null
+      };
     }
 
     const user = users[userId];
@@ -76,11 +85,11 @@ client.on('messageCreate', async message => {
   }
 
   if (command === 'version') {
-    message.reply("🛠 You are using the *Free Version* of The Party Bot Pro. Upgrade: gumroad.com/l/thepartybot");
+    message.reply("🛠 You are using the *Free Version* of The Party Bot Pro. Upgrade at: https://gumroad.com/l/thepartybot");
   }
 
   if (command === 'buybot') {
-    message.reply("💸 Get your own version here: https://gumroad.com/l/thepartybot");
+    message.reply("💸 Buy your own bot here: https://gumroad.com/l/thepartybot");
   }
 });
 
