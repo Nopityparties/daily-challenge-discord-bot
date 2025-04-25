@@ -80,7 +80,8 @@ client.on('messageCreate', async message => {
       .slice(0, 5)
       .map((u, i) => `${i + 1}. ${u.username} — ⭐ ${u.points} pts | 🔥 ${u.currentStreak} streak`);
 
-    message.reply("🏆 Top Producers:\n" + leaderboard.join("\n"));
+    message.reply("🏆 Top Producers:
+" + leaderboard.join("\n"));
   }
 
   if (command === 'version') {

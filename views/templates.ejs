@@ -1,1 +1,25 @@
-<!-- Admin template manager by niche -->
+
+<!DOCTYPE html>
+<html>
+<head><title>Edit Templates</title></head>
+<body>
+  <h2>Edit Challenges for <%= niche %></h2>
+  <form action="/templates/add" method="POST">
+    <input type="hidden" name="niche" value="<%= niche %>"/>
+    <input type="text" name="newChallenge" placeholder="New challenge"/>
+    <button type="submit">Add</button>
+  </form>
+  <ul>
+    <% templates.forEach((template, i) => { %>
+      <li>
+        <%= template %>
+        <form action="/templates/delete" method="POST" style="display:inline;">
+          <input type="hidden" name="niche" value="<%= niche %>"/>
+          <input type="hidden" name="index" value="<%= i %>"/>
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

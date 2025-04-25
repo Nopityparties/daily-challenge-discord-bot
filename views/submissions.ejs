@@ -1,1 +1,18 @@
-<!-- Shows user submissions + points by tier -->
+
+<!DOCTYPE html>
+<html>
+<head><title>Submissions</title></head>
+<body>
+  <h2>User Submissions</h2>
+  <table border="1" cellpadding="5">
+    <tr><th>Username</th><th>Points</th><th>Streak</th></tr>
+    <% for (let id in users) { %>
+      <tr>
+        <td><%= users[id].username %></td>
+        <td><%= users[id].points %></td>
+        <td><%= users[id].currentStreak %></td>
+      </tr>
+    <% } %>
+  </table>
+</body>
+</html>
