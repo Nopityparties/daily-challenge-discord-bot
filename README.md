@@ -1,22 +1,25 @@
-# The Party Bot Pro
+# The Daily Challenge Discord Bot
 
-Monetizable Discord bot that runs daily challenges, tracks streaks, and engages members. Includes leaderboard, dashboard, role tracking, and niche prompts.
+This bot automates beat challenges for producers. It tracks points, streaks, and supports monetization tiers and Supabase data storage.
 
-## Deployment Instructions
+## 💡 Features by Tier
 
-1. Upload this repo to GitHub
-2. Add TOKEN and CHANNEL_ID to Render as environment variables
-3. Set Start Command: `node bot.js` for bot
-4. Set Start Command: `node server.js` for dashboard
+| Tier     | Features                                                                 |
+|----------|--------------------------------------------------------------------------|
+| Free     | View dashboard, submissions, and tomorrow's challenge                    |
+| Starter  | Custom bot name, edit challenges                                         |
+| Team     | Multi-niche control, badge system                                        |
+| Lifetime | Daily backups to Supabase                                                |
+| SaaS     | Stripe integration + hosted version                                      |
 
-Visit your dashboard URL to manage challenges and see user data.
+## 🔐 .env Required
 
-## Monetization Model
+```env
+SUPABASE_URL=your_url
+SUPABASE_ANON_KEY=your_key
+DISCORD_TOKEN=your_token
+CHANNEL_ID=your_channel_id
+BOT_NAME=The Daily Challenge Discord Bot
+```
 
-| Tier | Price | Features |
-|------|-------|----------|
-| Free | $0 | Dashboard + 1 niche |
-| Starter | $29 | 1 server |
-| Team | $59 | 5 installs |
-| Lifetime | $99 | Unlimited installs |
-| SaaS | $5–10/mo | Hosted version |
+Starter tier can customize `BOT_NAME`.

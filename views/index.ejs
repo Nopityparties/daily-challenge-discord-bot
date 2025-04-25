@@ -1,27 +1,22 @@
 
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="/styles.css">
-  <title>Dashboard</title>
-</head>
+<head><link rel="stylesheet" href="/styles.css"><title><%= botName %> Dashboard</title></head>
 <body>
 <nav>
-  <h2>📊 The Party Bot</h2>
+  <h2>📊 <%= botName %></h2>
   <a href="/">Home</a>
-  <a href="/templates?niche=trap">Templates</a>
+  <a href="/templates">Templates</a>
   <a href="/submissions">Submissions</a>
 </nav>
 <main>
   <div class="card">
     <h3>🎉 Welcome</h3>
-    <p>Your bot is live. Use the sidebar to manage templates and submissions.</p>
+    <p>Your bot is live and connected to Supabase.</p>
   </div>
   <div class="card">
-    <h4>Quick Stats</h4>
-    <span class="chip primary">🔥 5-day streak</span>
-    <span class="chip">⭐ 42 points</span>
-    <span class="chip">💬 87 submissions</span>
+    <h3>📅 Tomorrow's Challenge</h3>
+    <p><%= preview %></p>
   </div>
 </main>
 </body>

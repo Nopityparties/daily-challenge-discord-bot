@@ -1,21 +1,12 @@
 
 <!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" href="/styles.css">
-  <title>Login</title>
-</head>
-<body>
-  <main>
-    <h2>🔐 Login</h2>
-    <% if (typeof error !== 'undefined') { %>
-      <p style="color:red;"><%= error %></p>
-    <% } %>
-    <form method="POST" action="/login">
-      <label>Username</label><input name="username" type="text" />
-      <label>Password</label><input name="password" type="password" />
-      <button class="btn" type="submit">Login</button>
-    </form>
-  </main>
-</body>
-</html>
+<html><head><link rel="stylesheet" href="/styles.css"><title>Login</title></head>
+<body><main>
+  <h2>🔐 Login</h2>
+  <% if (typeof error !== 'undefined') { %><p style="color:red;"><%= error %></p><% } %>
+  <form method="POST" action="/login">
+    <label>Username</label><input name="username" type="text" />
+    <label>Password</label><input name="password" type="password" />
+    <button class="btn" type="submit">Login</button>
+  </form>
+</main></body></html>
