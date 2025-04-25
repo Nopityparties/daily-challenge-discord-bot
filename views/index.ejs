@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>The Party Bot Dashboard</title></head>
+<body>
+  <h1>The Party Bot Dashboard</h1>
+  <h2>Current Niche: <%= currentNiche %></h2>
+  <form method="POST" action="/setniche">
+    <select name="niche">
+      <option value="trap">Trap</option>
+      <option value="boom-bap">Boom Bap</option>
+      <option value="lofi">Lofi</option>
+      <option value="streaming">Streaming</option>
+      <option value="cosplay">Cosplay</option>
+    </select>
+    <button type="submit">Set Niche</button>
+  </form>
+  <a href="/templates?niche=<%= currentNiche %>">→ View/Edit Templates</a><br>
+  <a href="/submissions">→ View Submissions</a>
+</body>
+</html>

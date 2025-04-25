@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Templates</title></head>
+<body>
+  <h1>Templates for <%= niche %></h1>
+  <form method="POST" action="/templates">
+    <input type="hidden" name="niche" value="<%= niche %>">
+    <textarea name="template" rows="3" cols="60" placeholder="New template..."></textarea><br>
+    <button type="submit">Add</button>
+  </form>
+  <ul>
+    <% entries.forEach(t => { %><li><%= t %></li><% }); %>
+  </ul>
+  <a href="/">← Back</a>
+</body>
+</html>
